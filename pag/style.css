@@ -1,0 +1,89 @@
+/*$mail->Username = 'testeformulario49s@gmail.com';
+$mail->Password = '56657890';*/
+
+
+body{
+   
+    text-align: center;
+    max-width: 1000px;
+    min-width: 300px;
+    margin: auto;
+    line-height: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 3em;
+}
+
+fieldset{
+    border-radius: 10px;
+  
+   
+}
+#container{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;   
+}
+div >  a{
+   font-size: 15px;
+    color: black;
+}
+.field{
+    outline: 0;  
+    border: none;
+    width: 400px;
+    height: 30px;
+}
+button{
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    width: 400px;
+    height: 35px;
+        
+}
+button:hover{
+    background-color: rgb(187, 27, 27);
+    transition: .05s;
+}
+.inputBox{
+    position: relative;
+}
+.inputUser{
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    color: black;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 2px;
+}
+.labelInput{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+}
+.inputUser:focus ~ .labelInput,
+.inputUser:valid ~ .labelInput{
+    top: -20px;
+    font-size: 12px;
+    color: rgb(17, 16, 16);
+}
+
+#submit{
+    background: red;
+    width: 400px;
+    height: 40px;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#submit:hover{
+    background-color: rgb(187, 27, 27);
+    transition: .05s;
+}

